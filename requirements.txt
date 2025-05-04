@@ -8,5 +8,5 @@ spacy>=3.7.4
 requests>=2.31.0
 python-docx>=0.8.11
 spacy-lookups-data>=1.0.3
-numpy==1.21.2  
+numpy>=1.21.2  
 https://github.com/explosion/spacy-models/releases/download/fr_core_news_sm-3.7.0/fr_core_news_sm-3.7.0-py3-none-any.whl
