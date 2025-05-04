@@ -1,15 +1,19 @@
-name: Deploy with fixed numpy
+name: Install dependencies
+
 on: [push]
+
 jobs:
-  deploy:
+  install:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v4
+      
+      - name: Set up Python 3.9  # Version compatible avec spaCy
+        uses: actions/setup-python@v4
         with:
           python-version: "3.9"
-      - name: Install dependencies
+
+      - name: Upgrade pip and install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip cache purge
-          pip install --no-cache-dir -r requirements.txt
+          pip install -r requirements.txt
