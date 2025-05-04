@@ -1,3 +1,18 @@
+import sys
+import numpy as np
+
+def verify_environment():
+    required_python = (3, 9)
+    current_python = sys.version_info[:2]
+    
+    if current_python != required_python:
+        raise RuntimeError(f"Python 3.9 required (current: {sys.version})")
+    
+    required_numpy = "1.21.2"
+    if np.__version__ != required_numpy:
+        raise RuntimeError(f"numpy {required_numpy} required (current: {np.__version__})")
+
+verify_environment()
 import streamlit as st
 import os
 import tempfile
